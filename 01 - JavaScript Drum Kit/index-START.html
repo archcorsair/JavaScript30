@@ -69,16 +69,10 @@
     'k': '75',
     'l': '76',
   }
-
-  function playAudio(key) {
-    const sound = document.querySelector(`audio[data-key="${keyMap[key]}"]`)
-    sound.play()
-  }
-
   document.addEventListener("keypress", e => {
-    playAudio(e.key)
+    const sound = document.querySelector(`audio[data-key="${keyMap[e.key]}"]`)
+    sound.play()
   })
-
 </script>
 
 
