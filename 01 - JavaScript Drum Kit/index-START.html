@@ -69,9 +69,12 @@
     'k': '75',
     'l': '76',
   }
+
   document.addEventListener("keypress", e => {
-    const sound = document.querySelector(`audio[data-key="${keyMap[e.key]}"]`)
-    sound.play()
+    if (keyMap.hasOwnProperty(e.key)) {
+      const sound = document.querySelector(`audio[data-key="${keyMap[e.key]}"]`)
+      sound.play()
+    }
   })
 </script>
 
